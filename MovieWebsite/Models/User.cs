@@ -17,6 +17,6 @@ namespace MovieWebsite.Models
     {
         User,
         VIP,
-        ADMIN
+        Admin
     }
 }

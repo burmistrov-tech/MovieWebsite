@@ -1,4 +1,3 @@
-
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 using MovieWebsite.Data;
+using MovieWebsite.Data.Implementation;
 
 namespace MovieWebsite
 {
@@ -30,6 +30,10 @@ namespace MovieWebsite
                 });
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddTransient<UserRepository>();
+            services.AddTransient<FilmRepository>();
+            services.AddTransient<PosterRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
